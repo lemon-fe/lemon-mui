@@ -1,6 +1,4 @@
 # Lemon UI
-
-#[![Build Status](https://api.travis-ci.org/lemon-fe/lemon-mui.svg?branch=master)](https://travis-ci.org/lemon-fe/lemon-mui)
 [![npm](https://img.shields.io/npm/v/lemon-mui.svg?maxAge=3600)](https://www.npmjs.com/package/lemon-mui)
 ![JS gzip size](http://img.badgesize.io/lemon-fe/lemon-mui/master/lib/index.js.svg?compression=gzip&label=gzip%20size:%20JS)
 > Mobile UI elements for **Vue 2.0**
