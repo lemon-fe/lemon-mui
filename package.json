@@ -1,0 +1,81 @@
+{
+  "name": "lemon-mui",
+  "version": "0.0.1",
+  "private": false,
+  "description": "Mobile UI elements for vue.js",
+  "keywords": [
+    "component",
+    "vue",
+    "mobile",
+    "lemon-mui"
+  ],
+  "main": "lib/index.js",
+  "entry": "lib/index.js",
+  "style": "lib/style.css",
+  "files": [
+    "lib",
+    "src",
+    "packages"
+  ],
+  "scripts": {
+    "install": "(cnpm i || npm i) && (cd example && (cnpm i || npm i)",
+    "example": "cd example && npm run serve",
+    
+    "dev": "npm run bootstrap && npm run build:entry && cooking watch -c build/cooking.demo.js -p",
+    "dist": "npm run clean && npm run build:entry && npm run lint && cooking build -c build/cooking.conf.js,build/cooking.common.js,build/cooking.component.js -p",
+    "deploy": "npm run build:entry && cooking build -c build/cooking.demo.js -p && gh-pages -d example/dist --remote eleme",
+    "build:entry": "node build/bin/build-entry",
+    "pub": "sh build/release.sh",
+    "pub:all": "node build/bin/build-all.js && lerna publish",
+    "clean": "rimraf lib && rimraf packages/*/lib",
+    "lint": "eslint src/**/*.js packages/**/*.{js,vue} build/**/*.js --quiet",
+    "build:lib": "webpack --config build-config/webpack.example.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lemon-fe/lemon-ui.git"
+  },
+  "author": "lemon-ui FE",
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": "^2.3.0"
+  },
+  "dependencies": {
+    "autoprefixer-loader": "^3.2.0",
+    "babel-cli": "6.x.x",
+    "babel-core": "6.x.x",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-remove-strict-mode": "^0.0.2",
+    "babel-plugin-transform-runtime": "6.x.x",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-es2015-loose": "6.x.x",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-preset-stage-1": "6.x.x",
+    "babel-runtime": "6.x.x",
+    "px2rem-loader-le": "^0.0.2",
+    "vue": "^2.2.2",
+    "vue-router": "^2.2.0",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.2",
+    "babel-eslint": "^7.1.1",
+    "babel-preset-env": "^1.2.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.22.0",
+    "css-loader": "^0.26.1",
+    "file-loader": "^0.10.0",
+    "friendly-errors-webpack-plugin": "^1.1.3",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.2",
+    "postcss-loader": "^1.3.3",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1",
+    "url-loader": "^0.5.7",
+    "vue-loader": "^11.1.4",
+    "vue-style-loader": "^2.0.0",
+    "webpack": "^2.2.1",
+    "lerna": "^3.4.3"
+  }
+}
