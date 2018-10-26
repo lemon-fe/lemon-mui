@@ -73,15 +73,15 @@ module.exports = {
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
     new FriendlyErrorsPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      beautify: false,
-      comments: false,
-      compress: {
-        warnings: false,
-        collapse_vars: true,
-        reduce_vars: true
-      }
-    }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   beautify: false,
+    //   comments: false,
+    //   compress: {
+    //     warnings: false,
+    //     collapse_vars: true,
+    //     reduce_vars: true
+    //   }
+    // }),
     // new OptimizeCssAssetsPlugin(), // 优化 CSS（去重/压缩）
   ]
 };

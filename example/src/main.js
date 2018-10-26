@@ -1,9 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
-// import Coms from '@com/index.js';
-import Coms from '../../lib/index.js';
+import Coms from '@com/index.js';
+// import Coms from '../../lib/index.js';
 import routes from './route';
-var routes_1 = require('./route')
 // import router from './router';
 import VueRouter from 'vue-router';
 window.Vue = Vue

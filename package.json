@@ -18,24 +18,17 @@
     "packages"
   ],
   "scripts": {
+    "dev": "npm run install && cd example && npm run serve",
     "install": "(cnpm i || npm i) && (cd example && (cnpm i || npm i)",
-    "example": "cd example && npm run serve",
-    
-    "dev": "npm run bootstrap && npm run build:entry && cooking watch -c build/cooking.demo.js -p",
-    "dist": "npm run clean && npm run build:entry && npm run lint && cooking build -c build/cooking.conf.js,build/cooking.common.js,build/cooking.component.js -p",
-    "deploy": "npm run build:entry && cooking build -c build/cooking.demo.js -p && gh-pages -d example/dist --remote eleme",
-    "build:entry": "node build/bin/build-entry",
-    "pub": "sh build/release.sh",
-    "pub:all": "node build/bin/build-all.js && lerna publish",
-    "clean": "rimraf lib && rimraf packages/*/lib",
-    "lint": "eslint src/**/*.js packages/**/*.{js,vue} build/**/*.js --quiet",
-    "build:lib": "webpack --config build-config/webpack.example.config.js"
+    "lib": "webpack --config build-config/webpack.lib.config",
+    "gh-pages": "cd example && npm run build && cd ../ && gh-pages -d example/dist",
+    "example": "cd example && npm run serve"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lemon-fe/lemon-ui.git"
+    "url": "https://github.com/lemon-fe/lemon-mui.git"
   },
-  "author": "lemon-ui FE",
+  "author": "lemon FE",
   "license": "MIT",
   "peerDependencies": {
     "vue": "^2.3.0"
