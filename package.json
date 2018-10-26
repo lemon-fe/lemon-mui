@@ -18,15 +18,20 @@
     "packages"
   ],
   "scripts": {
-    "dev": "npm run install && cd example && npm run serve",
-    "install": "(cnpm i || npm i) && (cd example && (cnpm i || npm i)",
+    "install-all": "npm install && cd example && npm install",
+    "dev": "cd example && npm run serve",
+    "example": "cd example && npm run serve",
     "lib": "webpack --config build-config/webpack.lib.config",
-    "gh-pages": "cd example && npm run build && cd ../ && gh-pages -d example/dist",
-    "example": "cd example && npm run serve"
+    "gh-pages": "gh-pages -d example/dist",
+    "pub": "npm publish"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/lemon-fe/lemon-mui.git"
+  },
+  "homepage": "https://github.com/lemon-fe/lemon-mui#readme",
+  "bugs": {
+    "url": "https://github.com/lemon-fe/lemon-mui/issues"
   },
   "author": "lemon FE",
   "license": "MIT",
