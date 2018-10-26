@@ -1,4 +1,4 @@
-# Mint UI
+# Lemon UI
 
 [![Build Status](https://api.travis-ci.org/lemon-fe/lemon-mui.svg?branch=master)](https://travis-ci.org/lemon-fe/lemon-mui)
 [![npm](https://img.shields.io/npm/v/lemon-mui.svg?maxAge=3600)](https://www.npmjs.com/package/lemon-mui)
@@ -19,8 +19,8 @@ Import all components.
 
 ```javascript
 import Vue from 'vue';
-import Mint from 'lemon-mui';
-Vue.use(Mint);
+import Lemon from 'lemon-mui';
+Vue.use(Lemon);
 ```
 
 ## Development
