@@ -7,7 +7,6 @@ import './assets/font/lemon-iconfont.css';
 const version = '0.0.1';
 const install = function(Vue, config = {}) {
   if (install.installed) return;
-
   Vue.component(Toast.name, Toast);
   Vue.component(Button.name, Button);
   Vue.component(CountDown.name, CountDown);
