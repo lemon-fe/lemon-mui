@@ -44,7 +44,7 @@ import { setTimeout } from 'timers';
         this._thisIndi = this.$loading({
           icon: 1,
           text: '加载中',
-          duration: 1000,
+          duration: 10000,
           mask: true
         });
       }
