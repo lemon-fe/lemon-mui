@@ -13,9 +13,9 @@
         "icon": "dialog"
       },
       {
-        "path": "/indicator",
-        "name": "indicator",
-        "icon": "indicator"
+        "path": "/loading",
+        "name": "loading",
+        "icon": "loading"
       }
     ]
   },
@@ -41,6 +41,11 @@
         "path": "/countdown",
         "name": "countdown",
         "icon": "countdown"
+      },
+      {
+        "path": "/area",
+        "name": "area",
+        "icon": "area"
       }
     ]
   }

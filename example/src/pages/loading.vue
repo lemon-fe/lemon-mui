@@ -1,8 +1,9 @@
 <template>
   <div class="page page-toast">
-    <Header>indicator</Header>
+    <Header>loading</Header>
     <div class="page-wrapper">
-      <button class="com-btn" @click="indicator" size="large">点击出现indicator</button>
+      <button class="com-btn" @click="showLoading" size="large">点击出现loading</button>
+      <button class="com-btn" @click="showLoadingMask" size="large">点击出现loading</button>
     </div>
   </div>
 </template>
@@ -28,8 +29,8 @@ import { setTimeout } from 'timers';
       };
     },
     methods: {
-      indicator () {
-        this._thisIndi = this.$indicator({
+      showLoading () {
+        this._thisIndi = this.$loading({
           icon: 1,
           text: '加载中',
           duration: 1000
@@ -38,6 +39,14 @@ import { setTimeout } from 'timers';
         // let t = setTimeout(function(){
         //   that._thisIndi.close();
         // },1000)
+      },
+      showLoadingMask(){
+        this._thisIndi = this.$loading({
+          icon: 1,
+          text: '加载中',
+          duration: 1000,
+          mask: true
+        });
       }
     },
     created: function (){

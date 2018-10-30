@@ -1,8 +1,9 @@
 import Toast from '../packages/toast/index.js';
 import Dialog from '../packages/dialog/index.js';
-import Indicator from '../packages/indicator/index.js';
+import Loading from '../packages/loading/index.js';
 
 import Button from '../packages/button/index.vue';
+import Area from '../packages/china-area/index.vue';
 import CountDown from '../packages/countdown/index.vue';
 // import Vue from 'vue'
 import './assets/font/lemon-iconfont.css';
@@ -12,11 +13,12 @@ const install = function(Vue, config = {}) {
   if (install.installed) return;
   Vue.component(Toast.name, Toast);
   Vue.component(Button.name, Button);
+  Vue.component(Area.name, Area);
   Vue.component(CountDown.name, CountDown);
   Vue.component(Dialog.name, Dialog);
   Vue.$toast = Vue.prototype.$toast = Toast;
   Vue.$dialog = Vue.prototype.$dialog = Dialog;
-  Vue.$indicator = Vue.prototype.$indicator = Indicator;
+  Vue.$loading = Vue.prototype.$loading = Loading;
 };
 
 // auto install
@@ -36,5 +38,6 @@ export default {
   Toast,
   Button,
   Dialog,
-  Indicator
+  Loading,
+  Area
 }

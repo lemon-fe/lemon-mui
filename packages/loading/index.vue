@@ -1,11 +1,12 @@
 <template>
-  <div class='lemon-indicator-wrap' v-show="visible">
-    <div class="mask"></div>
-    <div class="lemon-indicator">
-      <div style='display: inline-block;'>
-        <span class='lemon-spin'></span>
+  <div class='lemon-loading-wrap' v-show="visible">
+    <div class="mask" :class = 'maskVisible ? "mask mask-show" : "mask"'>
+      <div class="lemon-loading">
+        <div style='display: inline-block;'>
+          <span class='lemon-spin'></span>
+        </div>
+        <span class="lemon-loading-text" v-show='text'>{{ text }}</span>
       </div>
-      <span class="lemon-indicator-text" v-show='text'>{{ text }}</span>
     </div>
   </div>
 </template>
@@ -40,7 +41,10 @@
   left: 0;
   bottom: 0;
 }
-.lemon-indicator{
+.mask-show{
+  background: #fff;
+}
+.lemon-loading{
 display: inline-block;
 padding: 30px;
 background: rgba(0,0,0,.6);
@@ -61,7 +65,7 @@ color: #fff;
     border-right: 8px solid transparent;/*px*/
     border-radius: 50%;
   }
-  .lemon-indicator-text{
+  .lemon-loading-text{
     display: block;
     font-size: 28px;
     padding-top: 10px;
@@ -81,7 +85,8 @@ color: #fff;
     data() {
       return {
         visible: false,
-        text: ''
+        text: '',
+        maskVisible: false
       };
     },
 
