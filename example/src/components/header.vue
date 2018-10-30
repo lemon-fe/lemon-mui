@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'header',
+  name: 'Header',
   methods: {
     handleBack() {
       this.$router.back();
