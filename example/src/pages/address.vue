@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <lemon-address @update='update'></lemon-address>
+    <lemon-address :provinceParent = 'provinceParent' :cityParent='cityParent' :detailParent='detailParent' @update='update'></lemon-address>
   </div>
 </template>
 <script>

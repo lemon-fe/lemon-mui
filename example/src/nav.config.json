@@ -43,9 +43,9 @@
         "icon": "countdown"
       },
       {
-        "path": "/area",
-        "name": "area",
-        "icon": "area"
+        "path": "/address",
+        "name": "address",
+        "icon": "address"
       }
     ]
   }

@@ -128,8 +128,6 @@ export default {
       console.log('---'+this.provinceParent)
     },
     mounted () {
-      console.log(this.provinceParent)
-
         // this.province = '广东省'
         // this.city = '东莞市'
         // this.detail = '东城街道'

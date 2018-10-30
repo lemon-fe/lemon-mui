@@ -5,7 +5,7 @@ import Dialog from '../packages/dialog/index.js';
 
 // ui components
 import Button from '../packages/button/index.vue';
-import Area from '../packages/china-area/index.vue';
+import Address from '../packages/address/index.vue';
 import CountDown from '../packages/countdown/index.vue';
 
 // directives
@@ -19,7 +19,7 @@ const install = function(Vue, config = {}) {
   if (install.installed) return;
   Vue.component(Toast.name, Toast);
   Vue.component(Button.name, Button);
-  Vue.component(Area.name, Area);
+  Vue.component(Address.name, Address);
   Vue.component(CountDown.name, CountDown);
   Vue.component(Dialog.name, Dialog);
   Vue.$toast = Vue.prototype.$toast = Toast;
@@ -46,5 +46,5 @@ export default {
   Button,
   Dialog,
   Loading,
-  Area
+  Address
 }
