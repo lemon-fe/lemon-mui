@@ -11,6 +11,11 @@
         "path": "/dialog",
         "name": "dialog",
         "icon": "dialog"
+      },
+      {
+        "path": "/indicator",
+        "name": "indicator",
+        "icon": "indicator"
       }
     ]
   },

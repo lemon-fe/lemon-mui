@@ -1,7 +1,9 @@
 import Toast from '../packages/toast/index.js';
+import Dialog from '../packages/dialog/index.js';
+import Indicator from '../packages/indicator/index.js';
+
 import Button from '../packages/button/index.vue';
 import CountDown from '../packages/countdown/index.vue';
-import Dialog from '../packages/dialog/index.js';
 // import Vue from 'vue'
 import './assets/font/lemon-iconfont.css';
 
@@ -14,6 +16,7 @@ const install = function(Vue, config = {}) {
   Vue.component(Dialog.name, Dialog);
   Vue.$toast = Vue.prototype.$toast = Toast;
   Vue.$dialog = Vue.prototype.$dialog = Dialog;
+  Vue.$indicator = Vue.prototype.$indicator = Indicator;
 };
 
 // auto install
@@ -32,5 +35,6 @@ export default {
   version,
   Toast,
   Button,
-  Dialog
+  Dialog,
+  Indicator
 }
