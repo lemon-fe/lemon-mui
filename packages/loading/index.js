@@ -1,5 +1,7 @@
 import Vue from 'vue';
 import Com from './index.vue'
+import Directive from './directive.js';
+
 const LoadingConstructor = Vue.extend(Com);
 const loadingInstance = new LoadingConstructor({
   el: document.createElement('div')
