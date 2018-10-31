@@ -39,7 +39,7 @@ import { setTimeout } from 'timers';
         let that = this;
         let t = setTimeout(function(){
           that._thisIndi.close();
-        },3000)
+        }, 1)
       },
       showLoadingMask(){
         this._thisIndi = this.$loading({

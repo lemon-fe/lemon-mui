@@ -26,7 +26,7 @@ let Loading = (option) => {
       loaddingInstance.maskVisible = option.mask;
     }
     document.body.appendChild(loaddingInstance.$el);
-  Vue.nextTick(function() {
+ Vue.nextTick(function() {
     loaddingInstance.visible = true;
     if(duration){
       loaddingInstance.timer = setTimeout(function(){

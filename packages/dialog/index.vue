@@ -3,7 +3,7 @@
     <div class="mask" ></div>
     <div class="dialog">
       <strong class="title" v-show = 'options.title'>{{options.title}}</strong>
-      <div class="dialog__bd">{{options.content}}</div>
+      <div class="dialog__bd"><span>{{options.content}}</span></div>
       <div :class= 'options.btn_left_text ? "tool-two-wrap tool-wrap" : "tool-wrap"'>
         <a href="javascript:;" class="dialog__btn dialog__btn_primary btn-cancel" v-show='options.btn_left_text'>{{options.btn_left_text}}</a>
         <a href="javascript:;" class="dialog__btn dialog__btn_primary btn-confirm" >{{options.btn_right_text}}</a>
@@ -18,11 +18,13 @@ export default {
         return {
             options: {
               title: '标题',
-              content: '内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容内容内容vwerasd内容内容',
+              content: '这里是内容',
               type: 'confirm', //alert
               show: true,
               btn_left_text: '取消',
-              btn_right_text: '确认'
+              btn_right_text: '确认',
+              cancel: function(){},
+              confirm: function(){}
             }
         }
     },
@@ -73,6 +75,10 @@ export default {
       text-align: justify;
       max-height: 700px;/*px*/
       overflow: auto;
+      text-align: center;
+      span{
+        text-align: left;
+      }
     }
     .tool-two-wrap:before{
         content: '';
@@ -86,8 +92,8 @@ export default {
       }
     .tool-wrap{
       display: flex;
-      height: 80px;/*px*/
-      line-height: 80px;/*px*/
+      height: 90px;/*px*/
+      line-height: 90px;/*px*/
       text-align: center;
       position: relative;
       border-top: 1px solid #dcdcdc;/*no*/
@@ -98,6 +104,9 @@ export default {
         &:active{
           background: #ececec;
         }
+      }
+      a.btn-cancel{
+        color: #8c8c8c;
       }
     }
   }

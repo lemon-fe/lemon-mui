@@ -25,14 +25,14 @@ DialogConstructor.prototype.confirmInfo = function(cb){
     cb && cb(); 
   }
 };
-const Dialog = (option, _confirm, _cancel) => {
+const Dialog = (option) => {
   let dialogInstance = createDialog();
   Object.assign(dialogInstance.options, option);
   document.body.appendChild(dialogInstance.$el);
   Vue.nextTick(function() {
     dialogInstance.options.show = true;
-    dialogInstance.cancelInfo(_cancel);
-    dialogInstance.confirmInfo(_confirm);
+    dialogInstance.cancelInfo(option.cancel);
+    dialogInstance.confirmInfo(option.confirm);
   });
 };
 export default Dialog;
