@@ -1,25 +1,38 @@
 import Vue from 'vue';
 import Com from './index.vue'
-const VueComponent = Vue.extend(Com);
-const instance = new VueComponent({
+const DialogConstructor = Vue.extend(Com);
+let createDialog = function(){
+  let dialogInstance = new DialogConstructor({
     el: document.createElement('div')
-})
-const Dialog = (option, confirm, cancel) => {
-    showDialog(option, confirm, cancel);
-};
-const showDialog = (option, confirm, cancel) => {
-    Object.assign(instance.options, option);
-    instance.options.show = true;
-    document.body.appendChild(instance.$el);
-    let btn_cancel = instance.$el.getElementsByClassName("btn-cancel")[0];
-    let btn_confirm = instance.$el.getElementsByClassName("btn-confirm")[0];
-    btn_cancel.onclick = function(){
-        instance.options.show = false;
-        cancel && cancel()
-    }
-    btn_confirm.onclick = function(){
-        instance.options.show = false;
-        confirm && confirm()
-    }
+  })
+  return dialogInstance;
 }
+DialogConstructor.prototype.cancelInfo = function(cb){
+  let _this = this;
+  let btn_cancel = this.$el.getElementsByClassName("btn-cancel")[0];
+  btn_cancel.onclick = function(){
+    _this.options.show = false;
+    _this.$el.parentNode.removeChild(_this.$el);
+    cb && cb();
+  }
+};
+DialogConstructor.prototype.confirmInfo = function(cb){
+  let _this = this;
+  let btn_confirm = this.$el.getElementsByClassName("btn-confirm")[0];
+  btn_confirm.onclick = function(){
+    _this.options.show = false;
+    _this.$el.parentNode.removeChild(_this.$el);
+    cb && cb(); 
+  }
+};
+const Dialog = (option, _confirm, _cancel) => {
+  let dialogInstance = createDialog();
+  Object.assign(dialogInstance.options, option);
+  document.body.appendChild(dialogInstance.$el);
+  Vue.nextTick(function() {
+    dialogInstance.options.show = true;
+    dialogInstance.cancelInfo(_cancel);
+    dialogInstance.confirmInfo(_confirm);
+  });
+};
 export default Dialog;

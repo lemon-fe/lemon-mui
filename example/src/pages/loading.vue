@@ -34,19 +34,18 @@ import { setTimeout } from 'timers';
       showLoading () {
         this._thisIndi = this.$loading({
           icon: 1,
-          text: '加载中',
-          duration: 1000
+          text: '加载中'
         });
         let that = this;
-        // let t = setTimeout(function(){
-        //   that._thisIndi.close();
-        // },1000)
+        let t = setTimeout(function(){
+          that._thisIndi.close();
+        },3000)
       },
       showLoadingMask(){
         this._thisIndi = this.$loading({
           icon: 1,
           text: '加载中',
-          duration: 10000,
+          duration: 3000,
           mask: true
         });
       }
