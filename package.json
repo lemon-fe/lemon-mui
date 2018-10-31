@@ -1,6 +1,6 @@
 {
   "name": "lemon-mui",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "private": false,
   "description": "Mobile UI elements for vue.js",
   "keywords": [
@@ -22,7 +22,7 @@
     "dev": "cd example && npm run serve",
     "example": "cd example && npm run serve",
     "lib": "webpack --config build-config/webpack.lib.config",
-    "gh-pages": "gh-pages -d example/dist",
+    "gh-pages": "cd example && npm run build && cd .. && gh-pages -d example/dist",
     "pub": "npm publish"
   },
   "repository": {
