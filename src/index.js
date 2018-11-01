@@ -7,7 +7,7 @@ import Dialog_JS from '../packages/dialog/index.js';
 import Button from '../packages/button/index.vue';
 import Address from '../packages/address/index.vue';
 import CountDown from '../packages/countdown/index.vue';
-import Dialog_UI from '../packages/dialog/index.js';
+import Dialog_UI from '../packages/dialog/index.vue';
 
 // directives
 import LoadingDirective from '../packages/loading/directive.js'
