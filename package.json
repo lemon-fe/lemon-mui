@@ -22,7 +22,8 @@
     "dev": "cd example && npm run serve",
     "example": "cd example && npm run serve",
     "lib": "webpack --config build-config/webpack.lib.config",
-    "gh-pages": "gh-pages -d example/dist",
+    "gh-pages-example": "gh-pages --dist example/dist",
+    "gh-pages-docs": "gh-pages --dist book/_book --dest docs",
     "pub": "npm publish"
   },
   "repository": {
