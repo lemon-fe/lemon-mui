@@ -1,19 +1,19 @@
 <template>
-  <div id="Dialog" v-show=options.show>
-    <div class="mask" ></div>
-    <div class="dialog">
-      <strong class="title" v-show = 'options.title'>{{options.title}}</strong>
-      <div class="dialog__bd"><span>{{options.content}}</span></div>
+  <div class="lemon-dialog" v-show=options.show>
+    <div class="lemon-dialog-mask" ></div>
+    <div class="lemon-dialog-content">
+      <strong class="lemon-dialog-title" v-show = 'options.title'>{{options.title}}</strong>
+      <div class="lemon-dialog-content-bd"><span>{{options.content}}</span></div>
       <div :class= 'options.btn_left_text ? "tool-two-wrap tool-wrap" : "tool-wrap"'>
-        <a href="javascript:;" class="dialog__btn dialog__btn_primary btn-cancel" v-show='options.btn_left_text'>{{options.btn_left_text}}</a>
-        <a href="javascript:;" class="dialog__btn dialog__btn_primary btn-confirm" >{{options.btn_right_text}}</a>
+        <a href="javascript:;" class="lemon-dialog-btn btn-cancel" v-show='options.btn_left_text'>{{options.btn_left_text}}</a>
+        <a href="javascript:;" class="lemon-dialog-btn btn-confirm" >{{options.btn_right_text}}</a>
       </div>
     </div>
   </div>
 </template>
 <script>
 export default {
-    name: 'tip',
+    name: 'lemon-dialog',
     data: function(){
         return {
             options: {
@@ -37,9 +37,9 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-#Dialog{
+.lemon-dialog{
   // animation: mymove 5s infinite;
-  .mask{
+  .lemon-dialog-mask{
     position: fixed;
     z-index: 1000;
     top: 0;
@@ -48,7 +48,7 @@ export default {
     bottom: 0;
     background: rgba(0, 0, 0, .6);
   }
-  .dialog {
+  .lemon-dialog-content {
     position: fixed;
     z-index: 5000;
     width: 90%;
@@ -60,14 +60,14 @@ export default {
     text-align: center;
     border-radius: 6px;/*px*/
     overflow: hidden;
-    .title{
+    .lemon-dialog-title{
       display: block;
       font-weight: 400;
       font-size: 38px;/*px*/
       padding: 30px 30px 0;/*px*/
       color: #222;
     }
-    .dialog__bd{
+    .lemon-dialog-content-bd{
       padding: 40px 30px 40px;/*px*/
       line-height: 1.8;
       font-size: 30px;/*px*/

@@ -1,12 +1,13 @@
 // js components
 import Toast from '../packages/toast/index.js';
 import Loading from '../packages/loading/index.js';
-import Dialog from '../packages/dialog/index.js';
+import Dialog_JS from '../packages/dialog/index.js';
 
 // ui components
 import Button from '../packages/button/index.vue';
 import Address from '../packages/address/index.vue';
 import CountDown from '../packages/countdown/index.vue';
+import Dialog_UI from '../packages/dialog/index.js';
 
 // directives
 import LoadingDirective from '../packages/loading/directive.js'
@@ -21,10 +22,12 @@ const install = function(Vue, config = {}) {
   Vue.component(Button.name, Button);
   Vue.component(Address.name, Address);
   Vue.component(CountDown.name, CountDown);
-  Vue.component(Dialog.name, Dialog);
+  Vue.component(Dialog_UI.name, Dialog_UI);
+
   Vue.$toast = Vue.prototype.$toast = Toast;
-  Vue.$dialog = Vue.prototype.$dialog = Dialog;
+  Vue.$dialog = Vue.prototype.$dialog = Dialog_JS;
   Vue.$loading = Vue.prototype.$loading = Loading;
+
   Vue.use(LoadingDirective);
 };
 
@@ -44,7 +47,7 @@ export default {
   version,
   Toast,
   Button,
-  Dialog,
+  Dialog: Dialog_UI,
   Loading,
   Address
 }
