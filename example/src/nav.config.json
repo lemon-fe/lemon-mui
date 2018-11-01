@@ -6,6 +6,16 @@
         "path": "/toast",
         "name": "toast",
         "icon": "toast"
+      },
+      {
+        "path": "/dialog",
+        "name": "dialog",
+        "icon": "dialog"
+      },
+      {
+        "path": "/loading",
+        "name": "loading",
+        "icon": "loading"
       }
     ]
   },
@@ -31,6 +41,11 @@
         "path": "/countdown",
         "name": "countdown",
         "icon": "countdown"
+      },
+      {
+        "path": "/address",
+        "name": "address",
+        "icon": "address"
       }
     ]
   }

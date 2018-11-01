@@ -9,13 +9,14 @@
     }]"
     @click="handleClick"
     :disabled="disabled">
-    <span class="lemon-button-icon" v-if="icon || $slots.icon || loading">
+    <label class="lemon-button-text" v-if="iconPosition=='right'"><slot></slot></label>
+    <span class="lemon-button-icon" :class="`lemon-button-icon-${iconPosition}`" v-if="icon || $slots.icon || loading">
       <slot name="icon">
         <i v-if="loading" class="lemon-icon lemon-icon-loading"></i>
         <i v-else-if="icon" class="lemon-icon" :class="'lemon-icon-' + icon"></i>
       </slot>
     </span>
-    <label class="lemon-button-text"><slot></slot></label>
+    <label class="lemon-button-text" v-if="iconPosition=='left'"><slot></slot></label>
   </button>
 </template>
 
@@ -48,6 +49,10 @@ export default {
   },
   props: {
     icon: String,
+    iconPosition: {
+      type: String,
+      default: 'right'
+    },
     disabled: Boolean,
     nativeType: String,
     plain: Boolean,
@@ -120,10 +125,15 @@ export default {
         transform:translateZ(0);
       }
 
-      .lemon-icon {
+      .lemon-icon{
         vertical-align: middle;
         display: inline-block;
-        margin-right: 10px;
+      }
+      .lemon-button-icon-right .lemon-icon{
+        margin-left: 10px
+      }
+      .lemon-button-icon-left .lemon-icon{
+        margin-right: 10px
       }
   }
 

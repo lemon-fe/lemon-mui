@@ -1,13 +1,13 @@
 <template>
     <h1 class="page-title">
-      <lemon-button class="back-link" icon="arrow-left" plain size="small" type="primary" @click="handleBack">返回</lemon-button>
+      <lemon-button class="back-link" icon="arrow-left" iconPosition="left" plain size="small" type="primary" @click="handleBack">返回</lemon-button>
       <slot></slot>
     </h1>
 </template>
 
 <script>
 export default {
-  name: 'header',
+  name: 'Header',
   methods: {
     handleBack() {
       this.$router.back();

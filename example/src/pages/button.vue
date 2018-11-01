@@ -33,7 +33,7 @@
       </div>
       <div class="page-button-group">
         <lemon-button size="small" type="primary" icon="search">icon-search</lemon-button>
-        <lemon-button size="small" type="primary" icon="arrow-left">icon-arrow</lemon-button>
+        <lemon-button size="small" type="primary" icon="arrow-left" iconPosition="left">icon-arrow</lemon-button>
         <lemon-button size="small" type="primary" :loading="true">icon-loading</lemon-button>
       </div>
       <div class="page-button-group">
