@@ -49,6 +49,5 @@ export default {
   Button,
   Dialog: Dialog_UI,
   Loading,
-  Address,
-  loadingCloseAll
+  Address
 }
