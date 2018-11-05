@@ -154,13 +154,13 @@ export default {
     *zoom:1;
 }
 .select-wraper{
-  height: 80px;
-  line-height: 80px;
-  font-size: 28px;/*px*/
+  height: 86px;
+  line-height: 86px;
+  font-size: 32px;
   text-align: left;
   overflow: hidden;
   display: flex;
-  border-bottom: 2px solid #b5b5b6;/*px*/
+  border-bottom: 1px solid #b5b5b6;/*no*/
   position: relative;
 }
 .select-wraper:after{
@@ -177,7 +177,7 @@ export default {
 }
 .left-font{
   /* width: 100px; */
-  padding: 0 10px;
+  padding-left: 16px;
 }
 select{
   flex: 1;

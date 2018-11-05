@@ -8,16 +8,27 @@ let createLoading = () => {
   });
   return loadingInstance;
 }
+let loadingPool = [];
 LoadingConstructor.prototype.close = function () {
   this.visible = false;
   let _this = this;
+  let _index = loadingPool.indexOf(this)
+  loadingPool.splice(_index,1)
   this.$el.parentNode.removeChild(_this.$el);
   if(_this.timer){
     clearTimeout(_this.timer)
   }
 }
+let loadingCloseAll = function(){
+  while(loadingPool.length>0){
+    loadingPool[0].close();
+  }
+}
+LoadingConstructor.prototype.closeAll = function(){
+  loadingCloseAll()
+}
 let Loading = (option) => {
-  let loaddingInstance = createLoading();
+    let loaddingInstance = createLoading();
     let duration = option.duration;
     if(option.text){
       loaddingInstance.text = option.text;
@@ -26,14 +37,15 @@ let Loading = (option) => {
       loaddingInstance.maskVisible = option.mask;
     }
     document.body.appendChild(loaddingInstance.$el);
- Vue.nextTick(function() {
-    loaddingInstance.visible = true;
-    if(duration){
-      loaddingInstance.timer = setTimeout(function(){
-        loaddingInstance.close();
-      },duration);
-    }
-  })
+    loadingPool.push(loaddingInstance);
+    Vue.nextTick(function() {
+        loaddingInstance.visible = true;
+        if(duration){
+          loaddingInstance.timer = setTimeout(function(){
+            loaddingInstance.close();
+          },duration);
+        }
+      })
   return loaddingInstance;
 };
-export default Loading;
+export default {Loading, loadingCloseAll};
