@@ -1,6 +1,6 @@
 // js components
 import Toast from '../packages/toast/index.js';
-import {Loading, loadingCloseAll} from '../packages/loading/index.js';
+import Loading from '../packages/loading/index.js';
 import Dialog_JS from '../packages/dialog/index.js';
 
 // ui components
@@ -25,7 +25,8 @@ const install = function(Vue, config = {}) {
 
   Vue.$toast = Vue.prototype.$toast = Toast;
   Vue.$dialog = Vue.prototype.$dialog = Dialog_JS;
-  Vue.$loading = Vue.prototype.$loading = Loading;
+  Vue.$loading = Vue.prototype.$loading = Loading.Loading;
+  Vue.$loadingCloseAll = Vue.prototype.$loadingCloseAll = Loading.loadingCloseAll;
 
   Vue.use(LoadingDirective);
 };

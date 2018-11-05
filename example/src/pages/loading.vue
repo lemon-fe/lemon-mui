@@ -43,8 +43,8 @@ import { setTimeout } from 'timers';
         });
 
         setTimeout(function(){
-        that._thisIndit.closeAll();
-
+        // that._thisIndit.closeAll();
+        that.$loadingCloseAll();
         },2000)
 
 
