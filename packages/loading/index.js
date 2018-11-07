@@ -28,6 +28,7 @@ LoadingConstructor.prototype.closeAll = function(){
   loadingCloseAll()
 }
 let Loading = (option) => {
+    console.log("Vue.el", Vue.el);
     let loaddingInstance = createLoading();
     let duration = option.duration;
     if(option.text){
