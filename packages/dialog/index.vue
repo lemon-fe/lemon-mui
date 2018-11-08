@@ -77,6 +77,7 @@ export default {
       overflow: auto;
       text-align: center;
       span{
+        display: inline-block;
         text-align: left;
       }
     }
