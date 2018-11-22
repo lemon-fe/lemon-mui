@@ -3,7 +3,7 @@
 ![JS gzip size](http://img.badgesize.io/lemon-fe/lemon-mui/master/lib/index.js.svg?compression=gzip&label=gzip%20size:%20JS)
 > Mobile UI elements for **Vue 2.0**
 
-- [Homepage](https://lemon-fe.github.io/lemon-mui/index.html)
+- [Homepage](https://lemon-fe.github.io/lemon-mui/example/index.html)
 - [Documentation](https://lemon-fe.github.io/lemon-mui/docs/index.html)
 
 ## Installation

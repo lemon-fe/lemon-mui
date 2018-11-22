@@ -3,7 +3,7 @@ function resolve(dir) {
     return path.join(__dirname, dir)
 }
 module.exports = {
-  baseUrl: '/lemon-mui',
+  baseUrl: '/lemon-mui/example/',
   // webpack配置
   configureWebpack: config => {
     config.resolve.alias['@'] = resolve('src')
