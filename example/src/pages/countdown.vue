@@ -2,7 +2,10 @@
   <div class="page page-toast">
     <Header>CountDown</Header>
     <div class="page-wrapper">
-      <lemon-countdown class="lemon-countdown-btn" formate="ss秒" :seconds="60" :begin="countdown_begin" initText="发送验证码" @click="handleClick" @over="onCountDownOver"></lemon-countdown>
+      <lemon-countdown class="lemon-countdown-btn" formate="ss秒" :seconds="10" :begin="countdown_begin" initText="发送验证码" @click="handleClick" @over="onCountDownOver"></lemon-countdown>
+      <lemon-countdown class="lemon-countdown-btn" formate="ss" :seconds="10" :begin="countdown_begin" @click="handleClick" @over="onCountDownOver">
+        <span class="timer">剩余时间</span>
+      </lemon-countdown>
       <lemon-button size="small" type="primary" icon="alert" @click="handleClick">开始倒计时</lemon-button>
     </div>
   </div>
@@ -19,6 +22,10 @@
         margin: 0 auto;
         font-size: 30px;
       }
+    }
+    .timer{
+      background: red;
+      display: inline-block;
     }
 </style>
 

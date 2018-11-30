@@ -1,6 +1,7 @@
 <template>
     <button class='lemon-countdown' @click="onClick">
-       {{text}}
+       <slot></slot>
+       <span>{{text}}</span>
     </button>
 </template>
 <script>
@@ -130,11 +131,17 @@ export default {
       clearInterval(that.interval);
       that.interval = null;
       that.status = 0;
-      that.text = that.initText;
+      if(that.initText){
+        that.text = that.initText;
+      }
     }
   },
   created() {
-    this.text = this.initText;
+    if(this.initText){
+      this.text = this.initText;
+    }else{
+      this.text = this.formatOp(this.seconds, this.formate)
+    }
   }
 };
 </script>
