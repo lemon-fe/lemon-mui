@@ -85,6 +85,11 @@ export default {
               insertDom(el, el, binding);
             }
         });
+      } else {
+        el.domVisible = false;
+        el.instance.visible = false;
+        el.instance.hiding = true;
+        el.mask && el.mask.parentNode && el.mask.parentNode.removeChild(el.mask);
       }
     };
     const insertDom = (parent, el, binding) => {
