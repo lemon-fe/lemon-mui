@@ -1,13 +1,12 @@
 <template>
-  <div
-    v-show="visible"
-    class="lemon-v-loading-mask"
-    :style="{ backgroundColor: background || '' }">
-    <div class="lemon-indicator">
-      <div style='display: inline-block;'>
-        <span class='lemon-spin'></span>
+  <div class='lemon-loading-wrap' v-show="visible" :style="{ backgroundColor: background || '' }">
+    <div class="mask" :class = 'maskVisible ? "mask mask-show" : "mask"'>
+      <div class="lemon-loading">
+        <div style='display: inline-block;'>
+          <span class='lemon-spin'></span>
+        </div>
+        <span class="lemon-loading-text" v-show='text'>{{ text }}</span>
       </div>
-      <span class="lemon-indicator-text" v-if='text'>{{ text }}</span>
     </div>
   </div>
 </template>
@@ -36,6 +35,7 @@
   };
 </script>
 <style lang="less">
+
 @-webkit-keyframes mint-spinner-rotate {
   0% {
       -webkit-transform: rotate(0deg);
@@ -56,42 +56,42 @@
               transform: rotate(360deg);
   }
 }
-.lemon-v-loading-mask{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
+.mask{
+  position: fixed;
+  z-index: 1000;
   top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
 }
-.lemon-indicator{
-  display: inline-block;
-  padding: 30px;
-  background: rgba(247, 247, 247, 0.6);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border-radius: 10px;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #fff;
+.mask-show{
+  background: #fff;
+}
+.lemon-loading{
+display: inline-block;
+padding: 40px;
+background: rgba(0,0,0,.6);
+position: absolute;
+top: 50%;
+left: 50%;
+border-radius: 10px;
+transform: translate(-50%, -50%);
+text-align: center;
+color: #fff;
   .lemon-spin{
     display: inline-block;
     height: 50px;
     width: 50px;
     animation: mint-spinner-rotate .8s infinite linear;
     -webkit-animation: mint-spinner-rotate .8s infinite linear;
-    border: 4px solid rgb(204, 204, 204);
-    border-right: 4px solid transparent;
+    border: 8px solid rgb(204, 204, 204);/*px*/
+    border-right: 8px solid transparent;/*px*/
     border-radius: 50%;
   }
-  .lemon-indicator-text{
+  .lemon-loading-text{
     display: block;
     font-size: 28px;
     padding-top: 10px;
-    color: #ccc;
   }
-}
-.lemon-v-loading-parent--relative{
-  position: relative;
 }
 </style>
