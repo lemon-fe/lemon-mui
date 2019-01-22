@@ -5,7 +5,7 @@
       <button class="com-btn" @click="showLoading" size="large">点击出现loading</button>
       <button class="com-btn" @click="showLoadingMask" size="large">点击出现loading</button>
     </div>
-    <div class="page-wrapper" v-loading="true" lemon-loading-text="正在加载">
+    <div class="page-wrapper" v-loading="true" lemon-loading-text="正在加载" lemon-loading-mask>
     </div>
   </div>
 </template>

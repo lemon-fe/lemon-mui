@@ -1,6 +1,6 @@
 <template>
   <div class='lemon-loading-wrap' v-show="visible" :style="{ backgroundColor: background || '' }">
-    <div class="mask mask-show">
+    <div :class = 'maskVisible ? "mask mask-show" : "mask"'>
       <div class="lemon-loading">
         <div style='display: inline-block;'>
           <span class='lemon-spin'></span>
@@ -20,7 +20,8 @@
         background: null,
         fullscreen: true,
         visible: false,
-        customClass: ''
+        customClass: '',
+        maskVisible: false
       };
     },
 

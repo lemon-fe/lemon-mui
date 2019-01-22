@@ -114,6 +114,7 @@ export default {
     Vue.directive('loading', {
       bind: function(el, binding, vnode) {
         const textExr = el.getAttribute('lemon-loading-text');
+        const maskExr = el.hasAttribute('lemon-loading-mask');
         const customClassExr = el.getAttribute('lemon-loading-custom-class');
         const backgroundExr = el.getAttribute('lemon-loading-background');
         const vm = vnode.context;
@@ -122,7 +123,8 @@ export default {
           data: {
             text: vm && vm[textExr] || textExr,
             customClass: vm && vm[customClassExr] || customClassExr,
-            background: vm && vm[backgroundExr] || backgroundExr
+            background: vm && vm[backgroundExr] || backgroundExr,
+            maskVisible: vm && vm[maskExr] || maskExr
           }
         });
         el.instance = mask;
