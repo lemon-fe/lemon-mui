@@ -1,6 +1,6 @@
 <template>
   <div class='lemon-loading-wrap' v-show="visible" :style="{ backgroundColor: background || '' }">
-    <div class="mask" :class = 'maskVisible ? "mask mask-show" : "mask"'>
+    <div class="mask mask-show">
       <div class="lemon-loading">
         <div style='display: inline-block;'>
           <span class='lemon-spin'></span>
